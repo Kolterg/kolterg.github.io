@@ -1,0 +1,16 @@
+.Contacts {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 40px 80px;
+}
+
+.Contacts img {
+    border: solid 0.5px;
+}

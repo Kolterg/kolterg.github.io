@@ -1,0 +1,54 @@
+.Landing {
+    height: 1500px;
+}
+
+.greatings {
+    background-image: url("../../../assets/img/landing/background2.png");
+    height: 770px;
+    background-repeat: no-repeat round;
+    padding-top: 100px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.greatings h2 {
+    font-size: 42px;
+}
+
+.greatings h1 {
+    font-size: 74px;
+}
+
+.greatings p {
+    font-size: 32px;
+    width: 570px;
+}
+
+.bar {
+    width: 1200px;
+    height: 130px;
+    background-color: #594731;
+    color: #fff;
+    position: absolute;
+    top: 925px;
+    left: 351px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.calendarBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkBtn{
+    background-color: #DEC328;
+    color: #fff;
+    width: 175px;
+    height: 50px;
+    border-radius: 5px;
+}

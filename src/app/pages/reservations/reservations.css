@@ -1,0 +1,74 @@
+.Reservations {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search {
+    width: 1200px;
+    height: 130px;
+    background-color: #594731;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-top: solid #000;
+}
+
+.calendarBox .checkIn {
+    width: 260px;
+    height: 50px;
+}
+
+.calendarBox .checkOut {
+    width: 260px;
+    height: 50px;
+}
+
+.calendarBox .person {
+    width: 90px;
+    height: 50px;
+}
+
+.calendarBox label {
+    text-align: start;
+}
+
+.roomsList {
+    margin-top: 40px;
+}
+
+.roomsCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.roomsCard .roomFotos {
+    width: 300px;
+    margin-right: 80px;
+}
+
+.roomsCard .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+    width: 490px;
+    margin-right: 80px;
+}
+
+.icons img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.bookingArea button{
+    width: 120px;
+    height: 35px;
+    color: #fff;
+    background-color: #DEC328;
+}

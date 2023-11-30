@@ -1,0 +1,16 @@
+.About {
+    display: flex;
+    flex-direction: column;
+    margin: 0 80px;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    margin-top: 40px;
+}
+
+.block p {
+    margin: 0 80px;
+}
