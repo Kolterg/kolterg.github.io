@@ -1,3 +1,4 @@
+import roomsTypes from "../data/roomsTypesDb";
 import rooms from "../data/roomsDb";
 
 function getRooms() {
@@ -11,7 +12,7 @@ function getRoomById(roomId) {
 function findAvailabilityRooms(accommodates, checkIn, checkOut) {
     const availabilRooms = rooms.map(room => {
         if (room.accommodates >= accommodates) {
-            return;
+            return
         }
     })
 }
