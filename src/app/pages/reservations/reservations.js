@@ -10,12 +10,8 @@ function ReservationsPage() {
 
     let rooms = getRooms();
     
-    function logRooms() {
-        console.log(rooms);
-    }
-    
     return (
-        <div className='Reservations'>
+        <div id='Reservations'>
             <div className='search'>
                 <h2>Book now</h2>
                 <div className='calendarBox'>
@@ -30,7 +26,7 @@ function ReservationsPage() {
                     <label htmlFor='personField'>Person</label>
                     <input type='number' value={1} className='person' id='personField' readOnly/>
                 </div>
-                <button className='checkBtn' onClick={() => logRooms()}>Check availability</button>
+                <button className='checkBtn'>Check availability</button>
             </div>
             <div className='roomsList'>
                 {

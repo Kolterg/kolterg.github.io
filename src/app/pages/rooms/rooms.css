@@ -1,4 +1,8 @@
-.Rooms .head {
+#RoomsPage {
+    width: 100%;
+}
+
+#RoomsPage .head {
     background-image: url("../../../assets/img/rooms/background.png");
     background-size: 100% 100%;
     color: #fff;
@@ -7,6 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .head p {
@@ -34,49 +39,7 @@
     width: 670px;
 }
 
-.description .icons {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    max-width: 480px;
-}
 
-.amenitie { 
-    display: flex;
-    min-width: 120px;
-}
-
-.amenitie p {
-    margin-right: 40px;
-}
-
-.ico {
-    height: 34px;
-    margin-right: 40px;
-}
-
-.booking {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.price {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    width: 100%;
-}
-
-.price p:first-child {
-    margin-right: 130px;
-}
-
-.price h3 {
-    font-size: 40px;
-    margin: 10px 5px;
-}
 
 .bookNowBtn {
     background-color: #DEC328;

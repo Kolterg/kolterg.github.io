@@ -2,7 +2,7 @@ import './landing.css';
 
 function LandingPage() {
     return (
-        <div className='Landing'>
+        <div id='LandingPage'>
             <div className='greatings'>
                 <h2>Welcome to</h2>
                 <h1>H Sol de Canta</h1>

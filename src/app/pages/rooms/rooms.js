@@ -8,7 +8,7 @@ function RoomsPage() {
     let rooms = getRooms();
 
     return (
-        <div className='Rooms'>
+        <div id='RoomsPage'>
             <div className='head'>
                 <h1>Our rooms</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus. Mauris sit amet massa vitae tortor condimentum.</p>

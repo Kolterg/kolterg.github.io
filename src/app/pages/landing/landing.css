@@ -1,5 +1,6 @@
-.Landing {
+#LandingPage {
     height: 1500px;
+    width: 100%;
 }
 
 .greatings {

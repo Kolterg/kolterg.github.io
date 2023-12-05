@@ -1,6 +1,6 @@
 import './App.scss';
 import {
-  Link,
+  NavLink,
   Outlet
 } from "react-router-dom";
 
@@ -10,14 +10,14 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <div className='menu'>
-          <Link to={''} className='link main'><div className='mainWrap'><img src={logo} alt='Link to main page' /></div></Link>
-          <Link to={'about'} className='link about'>About</Link>
-          <Link to={'rooms'} className='link'>Rooms</Link>
-          <Link to={'reservations'} className='link'>Reservations</Link>
-          <Link to={'contacts'} className='link'>Contacts</Link>
-          <Link to={'activity'} className='link'>Activity</Link>
-        </div>
+        <nav>
+          <NavLink to={''} id='logo'><div id='logoWrap'><img src={logo} alt='Link to main page' /></div></NavLink>
+          <NavLink to={'about'} >About</NavLink>
+          <NavLink to={'rooms'} >Rooms</NavLink>
+          <NavLink to={'reservations'} >Reservations</NavLink>
+          <NavLink to={'contacts'} >Contacts</NavLink>
+          <NavLink to={'activity'} >Activity</NavLink>
+        </nav>
         <div className='barAndBtn'>
           <select id='lenguageBar' className='lenguageBar'>
             <option value='value1'>EN</option>
@@ -28,7 +28,7 @@ function App() {
         </div>
       </header>
       
-      <div className="app-content">
+      <div id="app-content">
         <Outlet />
       </div>
 

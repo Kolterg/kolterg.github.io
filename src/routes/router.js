@@ -8,6 +8,7 @@ import RoomsPage from '../app/pages/rooms/rooms';
 import ReservationsPage from '../app/pages/reservations/reservations';
 import ContactsPage from '../app/pages/contacts/contacts';
 import ActivityPage from '../app/pages/activity/activity';
+import Room, { loader as roomLoader } from '../app/pages/room/room';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
           {
             path: 'reservations',
             element: <ReservationsPage />
+          },
+          {
+            path: 'room/:roomId',
+            element: <Room />,
+            loader: roomLoader
           },
           {
             path: 'contacts',
