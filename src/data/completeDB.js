@@ -14,7 +14,7 @@ import BadroomDD_mini from '../assets/img/rooms/DD_mini.jpg';
 import BadroomDS_mini from '../assets/img/rooms/DS_mini.jpg';
 import BadroomFamily2_mini from '../assets/img/rooms/MatremonialLevel2_mini.jpg';
 
-export const  roomsTypes = [
+export const  rooms = [
     {
         id: 1,
         name: "Badroom Family 3",
@@ -28,7 +28,7 @@ export const  roomsTypes = [
                 amenities: {
                     wifi: {
                         name: 'Wi-fi',
-                        icon: 'assets/img/rooms/ico/wi-fi.png'
+                        icon: ''
                     },
                     tv: {
                         name: 'TV',
@@ -54,11 +54,11 @@ export const  roomsTypes = [
         miniFotos: {BadroomFamily3_mini},
         roomsList: [
             {
-                number: 1,
+                number: 10,
                 reservations: [
                     {
-                        checkIn: new Date(2023,12,12),
-                        checkOut: new Date(2023,12,24),
+                        checkIn: new Date(2023,11,12),
+                        checkOut: new Date(2023,11,24),
                         guest: {
                             firstName: 'Charlse',
                             lastName: 'Examples',
@@ -75,8 +75,8 @@ export const  roomsTypes = [
                         }
                     },
                     {
-                        checkIn: new Date(2023,12,26),
-                        checkOut: new Date(2024,1,8),
+                        checkIn: new Date(2023,11,26),
+                        checkOut: new Date(2024,0,8),
                         guest: {
                             firstName: 'Charlse',
                             lastName: 'Examples',
@@ -95,11 +95,11 @@ export const  roomsTypes = [
                 ]
             },
             {
-                number: 2,
+                number: 11,
                 reservations: [
                     {
-                        checkIn: new Date(2023,12,18),
-                        checkOut: new Date(2023,12,26),
+                        checkIn: new Date(2023,11,18),
+                        checkOut: new Date(2023,11,26),
                         guest: {
                             firstName: 'Charlse',
                             lastName: 'Examples',
@@ -116,8 +116,8 @@ export const  roomsTypes = [
                         }
                     },
                     {
-                        checkIn: new Date(2023,1,10),
-                        checkOut: new Date(2023,1,19),
+                        checkIn: new Date(2024,0,10),
+                        checkOut: new Date(2024,0,19),
                         guest: {
                             firstName: 'Charlse',
                             lastName: 'Examples',
@@ -175,10 +175,132 @@ export const  roomsTypes = [
         cost: 150,
         fotos: {BadroomFamilyPremium},
         miniFotos: {BadroomFamilyPremium_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [
+            {
+                number: 20,
+                reservations: [
+                    {
+                        checkIn: new Date(2023,11,10),
+                        checkOut: new Date(2023,11,18),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                    {
+                        checkIn: new Date(2023,11,20),
+                        checkOut: new Date(2023,11,30),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                ]
+            },
+            {
+                number: 21,
+                status: '',
+                reservations: [
+                    {
+                        checkIn: new Date(2023,11,8),
+                        checkOut: new Date(2023,11,26),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                    {
+                        checkIn: new Date(2024,0,8),
+                        checkOut: new Date(2024,0,26),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    }
+                ]
+            },
+            {
+                number: 22,
+                reservations: [
+                    {
+                        checkIn: new Date(2023,11,9),
+                        checkOut: new Date(2023,11,22),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                    {
+                        checkIn: new Date(2024,0,2),
+                        checkOut: new Date(2024,0,12),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    }
+                ]
+            },
+        ],
         roomsLeft: 5
     },
     {
@@ -218,10 +340,139 @@ export const  roomsTypes = [
         cost: 150,
         fotos: {BadroomDouble},
         miniFotos: {BadroomDouble_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [
+            {
+                number: 30,
+                reservations: [
+                    {
+                        checkIn: new Date(2023,11,10),
+                        checkOut: new Date(2023,11,18),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                    {
+                        checkIn: new Date(2023,11,20),
+                        checkOut: new Date(2023,11,30),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                ]
+            },
+            {
+                number: 31,
+                reservations: [
+                    {
+                        checkIn: new Date(2023,11,8),
+                        checkOut: new Date(2023,11,26),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                    {
+                        checkIn: new Date(2024,0,8),
+                        checkOut: new Date(2024,0,26),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    }
+                ]
+            },
+            {
+                number: 32,
+                status: '',
+                reservations: [
+                    {
+                        checkIn: new Date(2023,11,9),
+                        checkOut: new Date(2023,11,22),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    },
+                    {
+                        checkIn: new Date(2024,0,2),
+                        checkOut: new Date(2024,0,12),
+                        guest: {
+                            firstName: 'Charlse',
+                            lastName: 'Examples',
+                            email: 'example00@gmail.com',
+                            phone: '+3450987564',
+                        },
+                        vehicle: {
+                            existanse: true,
+                            number: '2'
+                        },
+                        pets: {
+                            existanse: true,
+                            number: 1
+                        }
+                    }
+                ]
+            },
+            {
+                number: 33,
+                status: '',
+                reservations: [
+                    
+                ]
+            },
+        ],
         roomsLeft: 4
     },
     {
@@ -261,10 +512,38 @@ export const  roomsTypes = [
         cost: 200,
         fotos: {BadroomTriple},
         miniFotos: {BadroomTriple_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [
+            {
+                number: 40,
+                reservations: [
+                    
+                ]
+            },
+            {
+                number: 41,
+                reservations: [
+                    
+                ]
+            },
+            {
+                number: 42,
+                status: '',
+                reservations: [
+                ]
+            },
+            {
+                number: 43,
+                status: '',
+                reservations: [
+                ]
+            },
+            {
+                number: 44,
+                status: '',
+                reservations: [
+                ]
+            },
+        ],
         roomsLeft: 3
     },
     {
@@ -308,7 +587,7 @@ export const  roomsTypes = [
             isFree: true,
             reserved: {}
         },
-        roomsLeft: 3
+        roomsLeft: 7//3
     },
     {
         id: 6,
@@ -351,7 +630,7 @@ export const  roomsTypes = [
             isFree: true,
             reserved: {}
         },
-        roomsLeft: 3
+        roomsLeft: 7//3
     },
     {
         id: 7,
@@ -394,6 +673,6 @@ export const  roomsTypes = [
             isFree: true,
             reserved: {}
         },
-        roomsLeft: 3
+        roomsLeft: 7//3
     },
 ]

@@ -5,7 +5,7 @@ import ErrorPage from '../app/pages/error-page/error-page';
 import LandingPage from '../app/pages/landing/landing';
 import AboutPage from '../app/pages/about/about';
 import RoomsPage from '../app/pages/rooms/rooms';
-import ReservationsPage from '../app/pages/reservations/reservations';
+import ReservationsPage, { loader as reservationsLoader } from '../app/pages/reservations/reservations';
 import ContactsPage from '../app/pages/contacts/contacts';
 import ActivityPage from '../app/pages/activity/activity';
 import Room, { loader as roomLoader } from '../app/pages/room/room';
@@ -33,12 +33,13 @@ const router = createBrowserRouter([
           },
           {
             path: 'reservations',
-            element: <ReservationsPage />
+            element: <ReservationsPage />,
+            loader: reservationsLoader
           },
           {
             path: 'room/:roomId',
             element: <Room />,
-            loader: roomLoader
+            loader: roomLoader,
           },
           {
             path: 'contacts',

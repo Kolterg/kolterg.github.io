@@ -1,8 +1,8 @@
-import WiFiIco from '../../../../assets/img/rooms/ico/wi-fi.png';
-import TVIco from '../../../../assets/img/rooms/ico/tv.png';
-import ShowerIco from '../../../../assets/img/rooms/ico/shower.png';
-import BathIco from '../../../../assets/img/rooms/ico/bath.png';
-import TowelsIco from '../../../../assets/img/rooms/ico/towels.png';
+import WiFiIco from 'assets/img/rooms/ico/wi-fi.png';
+import TVIco from 'assets/img/rooms/ico/tv.png';
+import ShowerIco from 'assets/img/rooms/ico/shower.png';
+import BathIco from 'assets/img/rooms/ico/bath.png';
+import TowelsIco from 'assets/img/rooms/ico/towels.png';
 import { Link } from 'react-router-dom';
 
 function RoomsCard({room}) {

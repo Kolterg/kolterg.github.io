@@ -9,7 +9,7 @@ import logo from "../assets/img/Logo.mini.png";
 function App() {
   return (
     <div className="App">
-      <header className="app-header">
+      <header>
         <nav>
           <NavLink to={''} id='logo'><div id='logoWrap'><img src={logo} alt='Link to main page' /></div></NavLink>
           <NavLink to={'about'} >About</NavLink>
