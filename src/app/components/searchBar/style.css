@@ -38,4 +38,17 @@
     top: 67px;
     left: -10px;
     background-color: #594731;
+    border: solid 1px #000;
+    width: 256px;
+    padding: 5px;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transform: 0.3s;
+}
+
+.calendarWrap.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
