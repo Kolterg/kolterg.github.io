@@ -5,36 +5,6 @@
     align-items: center;
 }
 
-.search {
-    width: 1200px;
-    height: 130px;
-    background-color: #594731;
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    border-top: solid #000;
-}
-
-.calendarBox .checkIn {
-    width: 260px;
-    height: 50px;
-}
-
-.calendarBox .checkOut {
-    width: 260px;
-    height: 50px;
-}
-
-.calendarBox .person {
-    width: 90px;
-    height: 50px;
-}
-
-.calendarBox label {
-    text-align: start;
-}
 
 .roomsList {
     margin-top: 40px;

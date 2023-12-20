@@ -2,9 +2,11 @@ import './room.css';
 import { getRoomById } from '../../../services/api.service';
 import { useLoaderData } from 'react-router-dom';
 
-import Calendar from '../../../assets/img/Screenshot 2023-12-01 202539.png';
-import RoomDetails from '../../components/roomDetails/roomDetails';
-import RoomImages from '../../components/roomImages/roomImages';
+// import Calendar from '../../../assets/img/Screenshot 2023-12-01 202539.png';
+import RoomDetails from '../../components/roomDetails';
+import RoomImages from '../../components/roomImages';
+import Calendar from 'app/components/calendar';
+import { useState } from 'react';
 
 export async function loader({ params }) {
     const room = await getRoomById(params.roomId);
@@ -18,7 +20,20 @@ export async function loader({ params }) {
 }
 
 function Room() {
-    const { room } = useLoaderData()
+    const { room } = useLoaderData();
+
+    const [checkIn, setCheckIn] = useState('');
+    const [checkOut, setCheckOut] = useState('');
+
+    function firstOnChange(date) {
+        setCheckIn((date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
+        // console.log("First date " + (date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
+    }
+
+    function secondOnChange(date) {
+        setCheckOut((date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
+        // console.log("Second date " + (date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
+    }
 
     return (
         <div id='RoomPage'>
@@ -60,7 +75,12 @@ function Room() {
                             </div>
                             <label>
                                 Check-in:
-                                <input type='text' />
+                                <input
+                                    type='text'
+                                    placeholder='YYYY/MM/DD'
+                                    value={checkIn}
+                                    onChange={e => setCheckIn(e.target.value)}
+                                />
                             </label>
                         </div>
                         <div>
@@ -83,13 +103,21 @@ function Room() {
                             </div>
                             <label>
                                 Check-out:
-                                <input type='text' />
+                                <input
+                                    type='text'
+                                    placeholder='YYYY/MM/DD'
+                                    value={checkOut}
+                                    onChange={e => setCheckOut(e.target.value)}
+                                />
                             </label>
                         </div>
                     </form>
                 </div>
                 <div>
-                    <img src={Calendar} alt='Calendar' />
+                    <Calendar
+                        firstOnChange={firstOnChange}
+                        secondOnChange={secondOnChange}
+                    />
                     <div className='calendarLegend'>
                         <div className='legendElement'>
                             <label>Free date - </label>

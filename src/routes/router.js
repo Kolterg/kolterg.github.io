@@ -9,6 +9,7 @@ import ReservationsPage, { loader as reservationsLoader } from '../app/pages/res
 import ContactsPage from '../app/pages/contacts/contacts';
 import ActivityPage from '../app/pages/activity/activity';
 import Room, { loader as roomLoader } from '../app/pages/room/room';
+import { action as lendingAction } from 'app/pages/landing/landing';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <LandingPage />
+            element: <LandingPage />,
+            action: lendingAction
           },
           {
             path: 'about',

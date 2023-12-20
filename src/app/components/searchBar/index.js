@@ -1,11 +1,8 @@
-import './reservations.css';
-
-import RoomsCard from './roomsCard/roomsCard';
-
-import { findAvailabilityRooms } from '../../../services/api.service';
-// import { Form, useLoaderData } from 'react-router-dom';
-import { /*useEffect,*/ useState } from 'react';
-import SearchBar from 'app/components/searchBar';
+import './style.css';
+import React, { useEffect } from 'react';
+import { Form, useLoaderData } from 'react-router-dom';
+import { findAvailabilityRooms } from 'services/api.service';
+import Calendar from '../calendar';
 
 export async function loader({ request }) {
     const url = new URL(request.url);
@@ -16,30 +13,24 @@ export async function loader({ request }) {
     return { rooms, checkIn, checkOut, person };
 }
 
-function ReservationsPage() {
-    const [rooms, setRooms] = useState([]);
+function SearchBar({getRooms}) {
+    let { rooms, checkIn, checkOut, person } = useLoaderData();
 
-    // let { rooms, checkIn, checkOut, person } = useLoaderData();
+    useEffect(() => {
+        document.getElementById("checkInField").value = checkIn;
+        document.getElementById("checkOutField").value = checkOut;
+        document.getElementById("personField").value = person;
+    }, [checkIn, checkOut, person]);
 
-    // useEffect(() => {
-    //     document.getElementById("checkInField").value = checkIn;
-    //     document.getElementById("checkOutField").value = checkOut;
-    //     document.getElementById("personField").value = person;
-    // }, [checkIn, checkOut, person]);
-
-    function getRooms(rooms) {
-        setRooms(rooms);
-    }
+    useEffect(() => {
+        getRooms(rooms);
+    }, [rooms]);// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <div id='Reservations'>
-            <SearchBar
-                getRooms={getRooms}
-            />
-            {/* <div className='search'> */}
-            {/* <h2>Book now</h2>
+        <div className='search'>
+                <h2>Book now</h2>
                 <Form id="search-form" role="search">
-                    <div className='calendarBox'>
+                    <div className='inputWrap'>
                         <label htmlFor='checkInField'>Check in</label>
                         <input
                             type='text'
@@ -49,8 +40,11 @@ function ReservationsPage() {
                             name='checkIn'
                             defaultValue={checkIn}
                         />
+                        <div className='calendarWrap'>
+                            <Calendar />
+                        </div>
                     </div>
-                    <div className='calendarBox'>
+                    <div className='inputWrap'>
                         <label htmlFor='checkOutField'>Check out</label>
                         <input
                             type='text'
@@ -61,10 +55,11 @@ function ReservationsPage() {
                             defaultValue={checkOut}
                         />
                     </div>
-                    <div className='calendarBox'>
+                    <div className='inputWrap'>
                         <label htmlFor='personField'>Person</label>
                         <input
                             type='number'
+                            placeholder='1'
                             className='person'
                             id='personField'
                             name='person'
@@ -72,19 +67,9 @@ function ReservationsPage() {
                         />
                     </div>
                     <button className='checkBtn' type='submit'>Check availability</button>
-                </Form> */}
-            {/* </div> */}
-            <div className='roomsList'>
-                {
-                    rooms.map(value => <RoomsCard
-                        key={value.id}
-                        room={value}
-                    />)
-                }
+                </Form>
             </div>
-
-        </div>
     )
 }
 
-export default ReservationsPage;
+export default SearchBar

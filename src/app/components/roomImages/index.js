@@ -1,4 +1,4 @@
-import './roomImages.css';
+import './style.css';
 
 function RoomImages({room, right}) {
     return (

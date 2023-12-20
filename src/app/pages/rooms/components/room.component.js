@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import RoomDetails from '../../../components/roomDetails/roomDetails';
-import RoomImages from '../../../components/roomImages/roomImages';
+import RoomDetails from '../../../components/roomDetails';
+import RoomImages from '../../../components/roomImages';
 
 function RoomComponent({ room }) {
     function Description() {

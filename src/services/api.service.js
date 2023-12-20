@@ -35,7 +35,7 @@ function findAvailabilityRooms(accommodates = 1, checkIn, checkOut) {
 
             if (typeOfRoom.roomsList) {
 
-                console.log(typeOfRoom);
+                // console.log(typeOfRoom);
                 let valueOfAvailableRooms = typeOfRoom.roomsList.length;
 
                 for (const room of typeOfRoom.roomsList) {
@@ -63,7 +63,7 @@ function findAvailabilityRooms(accommodates = 1, checkIn, checkOut) {
                 }
                 typeOfRoom.roomsLeft = valueOfAvailableRooms;
             }
-            console.log(typeOfRoom.roomsLeft);
+            // console.log(typeOfRoom.roomsLeft);
             if (typeOfRoom.roomsLeft > 0) {
                 return typeOfRoom;
             }
