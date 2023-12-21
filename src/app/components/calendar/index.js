@@ -1,10 +1,10 @@
-import './style.css';
+import './style.scss';
 import React, { useState } from 'react';
 
 import * as calendar from './calendar';
 import classNames from 'classnames';
 
-function Calendar({ monthNames, weekDayNames, firstOnChange, secondOnChange, givenDate,  }) {
+function Calendar({ monthNames, weekDayNames, onChange, secondOnChange, givenDate,  }) {
     const [date, setDate] = useState(givenDate);
     const [firstSelectedDate, setFirstSelectedDate] = useState(null);
     const [secondSelectedDate, setSecondSelectedDate] = useState(null);
@@ -32,7 +32,7 @@ function Calendar({ monthNames, weekDayNames, firstOnChange, secondOnChange, giv
             if (isFirstSelectedDate || (date < firstSelectedDate)) {
                 setFirstSelectedDate(date);
 
-                firstOnChange(date);
+                onChange(date);
 
                 if (date > secondSelectedDate) {
                     setSecondSelectedDate(null);
@@ -51,7 +51,9 @@ function Calendar({ monthNames, weekDayNames, firstOnChange, secondOnChange, giv
         } else {
             setFirstSelectedDate(date);
 
-            firstOnChange(date);
+            const strDate = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
+
+            onChange(strDate);
         }
     };
 

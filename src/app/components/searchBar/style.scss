@@ -1,0 +1,69 @@
+#Search {
+    width: 1200px;
+    height: 130px;
+    background-color: #594731;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    Form {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 5%;
+        width: 100%;
+    }
+
+    .inputWrap {
+        position: relative;
+    }
+
+    .inputWrap .checkIn {
+        width: 260px;
+        height: 50px;
+    }
+
+    .inputWrap .checkOut {
+        width: 260px;
+        height: 50px;
+    }
+
+    .inputWrap .person {
+        width: 90px;
+        height: 50px;
+    }
+
+    .inputWrap label {
+        text-align: start;
+    }
+
+    .calendarWrap {
+        position: absolute;
+        top: 78px;
+        left: 2px;
+        background-color: #fff;
+        color: #000;
+        opacity: 0;
+        transform: translateY(-10px);
+        visibility: hidden;
+        transform: 0.3s;
+    }
+
+    .calendarWrap.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .checkBtn {
+        background-color: #DEC328;
+        color: #fff;
+        width: 175px;
+        height: 50px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+}

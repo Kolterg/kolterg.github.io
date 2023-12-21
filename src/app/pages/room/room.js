@@ -1,8 +1,7 @@
-import './room.css';
+import './room.scss';
 import { getRoomById } from '../../../services/api.service';
 import { useLoaderData } from 'react-router-dom';
 
-// import Calendar from '../../../assets/img/Screenshot 2023-12-01 202539.png';
 import RoomDetails from '../../components/roomDetails';
 import RoomImages from '../../components/roomImages';
 import Calendar from 'app/components/calendar';
@@ -115,7 +114,7 @@ function Room() {
                 </div>
                 <div>
                     <Calendar
-                        firstOnChange={firstOnChange}
+                        onChange={firstOnChange}
                         secondOnChange={secondOnChange}
                     />
                     <div className='calendarLegend'>

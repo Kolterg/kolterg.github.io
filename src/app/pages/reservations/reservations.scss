@@ -1,0 +1,48 @@
+#Reservations {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #Search {
+        border-top: solid #000;
+    }
+
+    .roomsList {
+        margin-top: 40px;
+    }
+
+    .roomsCard {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .roomsCard .roomFotos {
+        width: 300px;
+        margin-right: 80px;
+    }
+
+    .roomsCard .description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+        width: 490px;
+        margin-right: 80px;
+    }
+
+    .icons img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+
+    .bookingArea button {
+        width: 120px;
+        height: 35px;
+        color: #fff;
+        background-color: #DEC328;
+    }
+
+}

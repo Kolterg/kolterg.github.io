@@ -1,8 +1,8 @@
-import Bar from 'app/components/searchBar/bar';
-import './landing.css';
+import './landing.scss';
 import { redirect } from 'react-router-dom';
+import SearchBar from 'app/components/searchBar';
 
-export async function action({ request, params }) {
+export async function action({ request }) {
     const formData = await request.formData();
     const searchData = Object.fromEntries(formData);
     const { checkIn, checkOut, person} = searchData;
@@ -17,23 +17,9 @@ function LandingPage() {
                 <h1>H Sol de Canta</h1>
                 <p>We are a family accommodation that seeks to provide good experiences through family treatment and quality service.</p>
             </div>
-            <Bar />
-            {/* <div className='bar'>
-                <h2>Book now</h2>
-                <div className='calendarBox'>
-                    <label>Check in</label>
-                    <input type='text' placeholder='DD MM YY' className='checkIn'/>
-                </div>
-                <div className='calendarBox'>
-                    <label>Check out</label>
-                    <input type='text' placeholder='DD MM YY' className='checkOut'/>
-                </div>
-                <div className='calendarBox'>
-                    <label>Person</label>
-                    <input type='number' value={1} className='person'/>
-                </div>
-                <button className='checkBtn'>Check availability</button>
-            </div> */}
+            <SearchBar
+                method={{method: 'post'}}
+            />
         </div>
     )
 }

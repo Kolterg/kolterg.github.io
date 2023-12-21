@@ -1,0 +1,34 @@
+#LandingPage {
+    height: 1500px;
+    width: 100%;
+
+    .greatings {
+        background-image: url("../../../assets/img/landing/background2.png");
+        height: 770px;
+        background-repeat: no-repeat round;
+        padding-top: 100px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .greatings h2 {
+        font-size: 42px;
+    }
+
+    .greatings h1 {
+        font-size: 74px;
+    }
+
+    .greatings p {
+        font-size: 32px;
+        width: 570px;
+    }
+
+    #Search {
+        position: absolute;
+        top: 925px;
+        left: 351px;
+    }
+}

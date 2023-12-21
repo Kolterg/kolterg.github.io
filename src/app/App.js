@@ -1,14 +1,15 @@
 import './App.scss';
 import {
   NavLink,
-  Outlet
+  Outlet,
+  Link
 } from "react-router-dom";
 
 import logo from "../assets/img/Logo.mini.png";
 
 function App() {
   return (
-    <div className="App">
+    <div id="App">
       <header>
         <nav>
           <NavLink to={''} id='logo'><div id='logoWrap'><img src={logo} alt='Link to main page' /></div></NavLink>
@@ -24,7 +25,7 @@ function App() {
             <option value='value2'>ES</option>
             <option value='value3'>UK</option>
           </select>
-          <button className='bookBtn'>Book now</button>
+          <button className='bookBtn'><Link to={'reservations'}>Book now</Link></button>
         </div>
       </header>
       
@@ -37,7 +38,7 @@ function App() {
           <div className="footer-line" />
           <div className="footer-line-2" />
           <div className="footer-line-3" />
-          <p className="text-wrapper-40">© 2023 by Sol de Canta</p>
+          <p className="text-wrapper-40">© {new Date().getFullYear()} by Sol de Canta</p>
           <div className="text-wrapper-41">Follow us on</div>
           <img
             className="FB-logo"

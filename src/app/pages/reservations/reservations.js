@@ -1,10 +1,9 @@
-import './reservations.css';
+import './reservations.scss';
+
+import { useLoaderData } from 'react-router-dom';
+import { findAvailabilityRooms } from '../../../services/api.service';
 
 import RoomsCard from './roomsCard/roomsCard';
-
-import { findAvailabilityRooms } from '../../../services/api.service';
-// import { Form, useLoaderData } from 'react-router-dom';
-import { /*useEffect,*/ useState } from 'react';
 import SearchBar from 'app/components/searchBar';
 
 export async function loader({ request }) {
@@ -17,63 +16,15 @@ export async function loader({ request }) {
 }
 
 function ReservationsPage() {
-    const [rooms, setRooms] = useState([]);
-
-    // let { rooms, checkIn, checkOut, person } = useLoaderData();
-
-    // useEffect(() => {
-    //     document.getElementById("checkInField").value = checkIn;
-    //     document.getElementById("checkOutField").value = checkOut;
-    //     document.getElementById("personField").value = person;
-    // }, [checkIn, checkOut, person]);
-
-    function getRooms(rooms) {
-        setRooms(rooms);
-    }
-
+    let { rooms, checkIn, checkOut, person } = useLoaderData();
+    
     return (
         <div id='Reservations'>
             <SearchBar
-                getRooms={getRooms}
+                checkIn={checkIn}
+                checkOut={checkOut}
+                person={person}
             />
-            {/* <div className='search'> */}
-            {/* <h2>Book now</h2>
-                <Form id="search-form" role="search">
-                    <div className='calendarBox'>
-                        <label htmlFor='checkInField'>Check in</label>
-                        <input
-                            type='text'
-                            placeholder='YYYY-MM-DD'
-                            className='checkIn'
-                            id='checkInField'
-                            name='checkIn'
-                            defaultValue={checkIn}
-                        />
-                    </div>
-                    <div className='calendarBox'>
-                        <label htmlFor='checkOutField'>Check out</label>
-                        <input
-                            type='text'
-                            placeholder='YYYY-MM-DD'
-                            className='checkOut'
-                            id='checkOutField'
-                            name='checkOut'
-                            defaultValue={checkOut}
-                        />
-                    </div>
-                    <div className='calendarBox'>
-                        <label htmlFor='personField'>Person</label>
-                        <input
-                            type='number'
-                            className='person'
-                            id='personField'
-                            name='person'
-                            defaultValue={person}
-                        />
-                    </div>
-                    <button className='checkBtn' type='submit'>Check availability</button>
-                </Form> */}
-            {/* </div> */}
             <div className='roomsList'>
                 {
                     rooms.map(value => <RoomsCard

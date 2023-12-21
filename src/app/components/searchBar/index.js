@@ -1,75 +1,86 @@
-import './style.css';
-import React, { useEffect } from 'react';
-import { Form, useLoaderData } from 'react-router-dom';
-import { findAvailabilityRooms } from 'services/api.service';
+import './style.scss';
+import React, { useEffect, useRef, useState } from 'react';
+import { Form } from 'react-router-dom';
+import classnames from 'classnames'
 import Calendar from '../calendar';
+import { useClickOutside } from 'hooks/useClickOutside';
 
-export async function loader({ request }) {
-    const url = new URL(request.url);
-    const checkIn = url.searchParams.get("checkIn");
-    const checkOut = url.searchParams.get("checkOut");
-    const person = url.searchParams.get("person");
-    const rooms = await findAvailabilityRooms(person, checkIn, checkOut);
-    return { rooms, checkIn, checkOut, person };
-}
+function SearchBar({ checkIn, checkOut, person, method }) {
 
-function SearchBar({getRooms}) {
-    let { rooms, checkIn, checkOut, person } = useLoaderData();
+    const [checkInDate, setCheckInDate] = useState(checkIn);
+    const [checkOutDate, setCheckOutDate] = useState(checkOut);
+
+    const [isCheckInOpen, setCheckInOpen] = useState(false);
+    const [isCheckOutOpen, setCheckOutOpen] = useState(false);
+
+    const checkInCalendarRef = useRef(null)
+    const checkOutCalendarRef = useRef(null)
+
+    useClickOutside(checkInCalendarRef, () => setCheckInOpen(false));
+    useClickOutside(checkOutCalendarRef, () => setCheckOutOpen(false));
 
     useEffect(() => {
-        document.getElementById("checkInField").value = checkIn;
-        document.getElementById("checkOutField").value = checkOut;
+        setCheckInDate(checkIn)
+        setCheckOutDate(checkOut)
         document.getElementById("personField").value = person;
     }, [checkIn, checkOut, person]);
 
-    useEffect(() => {
-        getRooms(rooms);
-    }, [rooms]);// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <div className='search'>
+        <div id='Search'>
+            <Form id="search-form" role="search" { ...method }>
                 <h2>Book now</h2>
-                <Form id="search-form" role="search">
-                    <div className='inputWrap'>
-                        <label htmlFor='checkInField'>Check in</label>
-                        <input
-                            type='text'
-                            placeholder='YYYY-MM-DD'
-                            className='checkIn'
-                            id='checkInField'
-                            name='checkIn'
-                            defaultValue={checkIn}
-                        />
-                        <div className='calendarWrap'>
-                            <Calendar />
-                        </div>
+                <div className='inputWrap'>
+                    <label htmlFor='checkInField'>Check in</label>
+                    <input
+                        type='text'
+                        placeholder='YYYY-MM-DD'
+                        className='checkIn'
+                        id='checkInField'
+                        name='checkIn'
+                        autoComplete='off'
+                        value={checkInDate}
+                        onChange={e => setCheckInDate(e.target.value)}
+                        onClick={() => setCheckInOpen(!isCheckInOpen)}
+                    />
+                    <div className={classnames('calendarWrap', { 'active': isCheckInOpen })} ref={checkInCalendarRef}>
+                        <Calendar onChange={setCheckInDate} />
                     </div>
-                    <div className='inputWrap'>
-                        <label htmlFor='checkOutField'>Check out</label>
-                        <input
-                            type='text'
-                            placeholder='YYYY-MM-DD'
-                            className='checkOut'
-                            id='checkOutField'
-                            name='checkOut'
-                            defaultValue={checkOut}
-                        />
+                </div>
+                <div className='inputWrap'>
+                    <label htmlFor='checkOutField'>Check out</label>
+                    <input
+                        type='text'
+                        placeholder='YYYY-MM-DD'
+                        className='checkOut'
+                        id='checkOutField'
+                        name='checkOut'
+                        autoComplete='off'
+                        value={checkOutDate}
+                        onChange={e => setCheckOutDate(e.target.value)}
+                        onClick={() => setCheckOutOpen(!isCheckOutOpen)}
+                    />
+                    <div className={classnames('calendarWrap', { 'active': isCheckOutOpen })} ref={checkOutCalendarRef}>
+                        <Calendar onChange={setCheckOutDate} />
                     </div>
-                    <div className='inputWrap'>
-                        <label htmlFor='personField'>Person</label>
-                        <input
-                            type='number'
-                            placeholder='1'
-                            className='person'
-                            id='personField'
-                            name='person'
-                            defaultValue={person}
-                        />
-                    </div>
-                    <button className='checkBtn' type='submit'>Check availability</button>
-                </Form>
-            </div>
+                </div>
+                <div className='inputWrap'>
+                    <label htmlFor='personField'>Person</label>
+                    <input
+                        type='number'
+                        placeholder='1'
+                        className='person'
+                        id='personField'
+                        name='person'
+                        defaultValue={person}
+                    />
+                </div>
+                <button className='checkBtn' type='submit'>Check availability</button>
+            </Form>
+        </div>
     )
 }
+
+SearchBar.defaultProps = { checkIn: '', checkOut: '', person: 1 }
 
 export default SearchBar
