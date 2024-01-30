@@ -352,4 +352,4 @@ const rooms = [
     },
 ]
 
-export default rooms;
+export { rooms };

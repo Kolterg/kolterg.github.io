@@ -583,6 +583,7 @@ export const  rooms = [
         cost: 180,
         fotos: {BadroomDD},
         miniFotos: {BadroomDD_mini},
+        roomsList: [],
         status: {
             isFree: true,
             reserved: {}
@@ -626,6 +627,7 @@ export const  rooms = [
         cost: 130,
         fotos: {BadroomDS},
         miniFotos: {BadroomDS_mini},
+        roomsList: [],
         status: {
             isFree: true,
             reserved: {}
@@ -669,6 +671,7 @@ export const  rooms = [
         cost: 100,
         fotos: {BadroomFamily2},
         miniFotos: {BadroomFamily2_mini},
+        roomsList: [],
         status: {
             isFree: true,
             reserved: {}

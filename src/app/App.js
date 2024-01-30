@@ -5,7 +5,7 @@ import {
   Link
 } from "react-router-dom";
 
-import logo from "../assets/img/Logo.mini.png";
+import logo from "assets/img/Logo.mini.png";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           <NavLink to={'activity'} >Activity</NavLink>
         </nav>
         <div className='barAndBtn'>
+          <Link to={'admin'}>Admin</Link>
           <select id='lenguageBar' className='lenguageBar'>
             <option value='value1'>EN</option>
             <option value='value2'>ES</option>

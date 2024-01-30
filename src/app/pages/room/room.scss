@@ -10,9 +10,64 @@
         flex-direction: row;
     }
 
+
+    .textDescriptionAndBookAndCalendar {
+        width: 100%;
+
+        .textDescriptionAndBook {
+            width: 100%;
+    
+            .roomTextDescription {
+                text-align: start;
+                width: 40vw;
+                margin-bottom: 40px;
+            }
+
+            Form {
+                display: flex;
+                flex-direction: column;
+                
+                .inputsBox{
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+
+                    .inputRow {
+                        display: flex;
+                        flex-direction: row;
+
+                        .inputWrap {
+                            display: flex;
+                            align-items: flex-start;
+                            width: 50%;
+
+                            label {
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    width: 40%;
+                }
+            }
+        }
+    }
+
+
+
     .chooseRoom {
         display: flex;
         flex-direction: row;
+
+        p {
+            margin: 0 20px 20px 0;
+        }
+
+        select {
+            height: 30px;
+        }
     }
 
     form {
@@ -20,9 +75,10 @@
         flex-direction: row;
     }
 
-    form>div {
+    .inputColumn {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .calendarLegend {

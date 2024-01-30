@@ -21,8 +21,8 @@ function ReservationsPage() {
     return (
         <div id='Reservations'>
             <SearchBar
-                checkIn={checkIn}
-                checkOut={checkOut}
+                checkIn={checkIn === null ? '' : checkIn}
+                checkOut={checkOut === null ? '' : checkOut}
                 person={person}
             />
             <div className='roomsList'>

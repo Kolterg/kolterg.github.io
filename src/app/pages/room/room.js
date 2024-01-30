@@ -1,6 +1,6 @@
 import './room.scss';
-import { getRoomById } from '../../../services/api.service';
-import { useLoaderData } from 'react-router-dom';
+import { addReservation, getRoomTypeById } from '../../../services/api.service';
+import { Form, useLoaderData } from 'react-router-dom';
 
 import RoomDetails from '../../components/roomDetails';
 import RoomImages from '../../components/roomImages';
@@ -8,114 +8,117 @@ import Calendar from 'app/components/calendar';
 import { useState } from 'react';
 
 export async function loader({ params }) {
-    const room = await getRoomById(params.roomId);
-    if (!room) {
+    const roomType = await getRoomTypeById(params.roomId);
+    if (!roomType) {
         throw new Response("", {
             status: 404,
             statusText: "Room Not Found",
         });
     }
-    return { room };
+    return { roomType };
+}
+
+export async function action({ request, params }) {
+    const formData = await request.formData();
+    const reservation = Object.fromEntries(formData);
+    const roomType = await getRoomTypeById(params.roomId);
+    const response = await addReservation(reservation, roomType.name, params.roomId);
+    console.log(response);
+    return response;
 }
 
 function Room() {
-    const { room } = useLoaderData();
+    const { roomType } = useLoaderData();
 
     const [checkIn, setCheckIn] = useState('');
     const [checkOut, setCheckOut] = useState('');
 
-    function firstOnChange(date) {
-        setCheckIn((date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
-        // console.log("First date " + (date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
-    }
-
-    function secondOnChange(date) {
-        setCheckOut((date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
-        // console.log("Second date " + (date.getUTCFullYear()) + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate()));
-    }
+    const rooms = roomType.roomsList;
 
     return (
         <div id='RoomPage'>
-            <h1>{room.name}</h1>
+            <h1>{roomType.name}</h1>
             <div>
-                <RoomImages room={room} />
-                <RoomDetails room={room} />
+                <RoomImages room={roomType} />
+                <RoomDetails room={roomType} />
             </div>
 
-            <div>
-                <div>
-                    <p>{room.description.text}</p>
-                    <div className='chooseRoom'>
-                        <p>Choose room number</p>
-                        <select>
-                            <option value={[]}>1</option>
-                            <option value={[]}>2</option>
-                            <option value={[]}>3</option>
-                        </select>
-                    </div>
-                    <form>
-                        <div>
-                            <label>
-                                Name:
-                                <input type='text' />
-                            </label>
-                            <label>
-                                Email:
-                                <input type='text' />
-                            </label>
-                            <div>
-                                <label>
-                                    Vehicle:
-                                    <input type='checkbox' />
-                                </label>
-                                <label>
-                                    <input type='number' />
-                                </label>
-                            </div>
-                            <label>
-                                Check-in:
-                                <input
-                                    type='text'
-                                    placeholder='YYYY/MM/DD'
-                                    value={checkIn}
-                                    onChange={e => setCheckIn(e.target.value)}
-                                />
-                            </label>
+            <div className='textDescriptionAndBookAndCalendar'>
+                <div className='textDescriptionAndBook'>
+                    <p className='roomTextDescription'>{roomType.description.text}</p>
+                    <Form method='post'>
+                        <div className='chooseRoom'>
+                            <p>Choose room number</p>
+                            <select name='roomNumber'>
+                                {
+                                    rooms.map((room, index) => <option key={index} value={room.number}>{room.number}</option>)
+                                }
+                            </select>
                         </div>
-                        <div>
-                            <label>
-                                Surname:
-                                <input type='text' />
-                            </label>
-                            <label>
-                                Phone:
-                                <input type='text' />
-                            </label>
-                            <div>
-                                <label>
-                                    Pets:
-                                    <input type='checkbox' />
-                                </label>
-                                <label>
-                                    <input type='number' />
-                                </label>
+                        <div className='inputsBox'>
+                            <div className='inputRow'>
+                                <div className='inputWrap'>
+                                    <label>Name:</label>
+                                    <input type='text' name='firstName' />
+                                </div>
+                                <div className='inputWrap'>
+                                    <label>Surname:</label>
+                                    <input type='text' name='secondName' />
+                                </div>
                             </div>
-                            <label>
-                                Check-out:
-                                <input
-                                    type='text'
-                                    placeholder='YYYY/MM/DD'
-                                    value={checkOut}
-                                    onChange={e => setCheckOut(e.target.value)}
-                                />
-                            </label>
+                            <div className='inputRow'>
+                                <div className='inputWrap'>
+                                    <label>Email:</label>
+                                    <input type='text' name='email' />
+                                </div>
+                                <div className='inputWrap'>
+                                    <label>Phone:</label>
+                                    <input type='text' name='phone' />
+                                </div>
+                            </div>
+                            <div className='inputRow'>
+                                <div className='inputWrap'>
+                                    <label>Vehicle:</label>
+                                    <input type='number' name='vehicle' />
+                                </div>
+                                <div className='inputWrap'>
+                                    <label>Pets:</label>
+                                    <input type='number' name='pets' />
+                                </div>
+                            </div>
+                            <div className='inputRow'>
+                                <div className='inputWrap'>
+                                    <label>Check-in:</label>
+                                    <input
+                                        type='text'
+                                        name='checkIn'
+                                        placeholder='YYYY/MM/DD'
+                                        value={checkIn}
+                                        onChange={e => setCheckIn(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className='inputWrap'>
+                                    <label>Check-out:</label>
+                                    <input
+                                        type='text'
+                                        name='checkOut'
+                                        placeholder='YYYY/MM/DD'
+                                        value={checkOut}
+                                        onChange={e => setCheckOut(e.target.value)}
+                                    />
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                        <button type='submit'>Book the room</button>
+                    </Form>
                 </div>
                 <div>
                     <Calendar
-                        onChange={firstOnChange}
-                        secondOnChange={secondOnChange}
+                        onChange={setCheckIn}
+                        secondOnChange={setCheckOut}
+                        selectedDateFromInput={new Date(checkIn)}
+                        secondSelectedDateFromInput={new Date(checkOut)}
                     />
                     <div className='calendarLegend'>
                         <div className='legendElement'>
@@ -133,7 +136,6 @@ function Room() {
                     </div>
                 </div>
             </div>
-            <button>Book the room</button>
         </div>
     )
 }

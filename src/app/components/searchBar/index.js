@@ -28,7 +28,7 @@ function SearchBar({ checkIn, checkOut, person, method }) {
 
     return (
         <div id='Search'>
-            <Form id="search-form" role="search" { ...method }>
+            <Form id="search-form" role="search" {...method}>
                 <h2>Book now</h2>
                 <div className='inputWrap'>
                     <label htmlFor='checkInField'>Check in</label>
@@ -44,7 +44,10 @@ function SearchBar({ checkIn, checkOut, person, method }) {
                         onClick={() => setCheckInOpen(!isCheckInOpen)}
                     />
                     <div className={classnames('calendarWrap', { 'active': isCheckInOpen })} ref={checkInCalendarRef}>
-                        <Calendar onChange={setCheckInDate} />
+                        <Calendar
+                            onChange={setCheckInDate}
+                            selectedDateFromInput={new Date(checkInDate)}
+                        />
                     </div>
                 </div>
                 <div className='inputWrap'>
@@ -61,7 +64,10 @@ function SearchBar({ checkIn, checkOut, person, method }) {
                         onClick={() => setCheckOutOpen(!isCheckOutOpen)}
                     />
                     <div className={classnames('calendarWrap', { 'active': isCheckOutOpen })} ref={checkOutCalendarRef}>
-                        <Calendar onChange={setCheckOutDate} />
+                        <Calendar
+                            onChange={setCheckOutDate}
+                            selectedDateFromInput={new Date(checkOutDate)}
+                        />
                     </div>
                 </div>
                 <div className='inputWrap'>

@@ -52,90 +52,7 @@ export const  roomsTypes = [
         cost: 120,
         fotos: {BadroomFamily3},
         miniFotos: {BadroomFamily3_mini},
-        roomsList: [
-            {
-                number: 1,
-                reservations: [
-                    {
-                        checkIn: new Date(2023,12,12),
-                        checkOut: new Date(2023,12,24),
-                        guest: {
-                            firstName: 'Charlse',
-                            lastName: 'Examples',
-                            email: 'example00@gmail.com',
-                            phone: '+3450987564',
-                        },
-                        vehicle: {
-                            existanse: true,
-                            number: '2'
-                        },
-                        pets: {
-                            existanse: true,
-                            number: 1
-                        }
-                    },
-                    {
-                        checkIn: new Date(2023,12,26),
-                        checkOut: new Date(2024,1,8),
-                        guest: {
-                            firstName: 'Charlse',
-                            lastName: 'Examples',
-                            email: 'example00@gmail.com',
-                            phone: '+3450987564',
-                        },
-                        vehicle: {
-                            existanse: true,
-                            number: '2'
-                        },
-                        pets: {
-                            existanse: true,
-                            number: 1
-                        }
-                    },
-                ]
-            },
-            {
-                number: 2,
-                reservations: [
-                    {
-                        checkIn: new Date(2023,12,18),
-                        checkOut: new Date(2023,12,26),
-                        guest: {
-                            firstName: 'Charlse',
-                            lastName: 'Examples',
-                            email: 'example00@gmail.com',
-                            phone: '+3450987564',
-                        },
-                        vehicle: {
-                            existanse: true,
-                            number: '2'
-                        },
-                        pets: {
-                            existanse: true,
-                            number: 1
-                        }
-                    },
-                    {
-                        checkIn: new Date(2023,1,10),
-                        checkOut: new Date(2023,1,19),
-                        guest: {
-                            firstName: 'Charlse',
-                            lastName: 'Examples',
-                            email: 'example00@gmail.com',
-                            phone: '+3450987564',
-                        },
-                        vehicle: {
-                            existanse: true,
-                            number: '2'
-                        },
-                        pets: {
-                            existanse: true,
-                            number: 1
-                        }
-                    }
-                ]
-            },
-        ],
+        roomsList: [],
         roomsLeft: 8
     },
     {
@@ -175,10 +92,7 @@ export const  roomsTypes = [
         cost: 150,
         fotos: {BadroomFamilyPremium},
         miniFotos: {BadroomFamilyPremium_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [],
         roomsLeft: 5
     },
     {
@@ -218,10 +132,7 @@ export const  roomsTypes = [
         cost: 150,
         fotos: {BadroomDouble},
         miniFotos: {BadroomDouble_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [],
         roomsLeft: 4
     },
     {
@@ -261,10 +172,7 @@ export const  roomsTypes = [
         cost: 200,
         fotos: {BadroomTriple},
         miniFotos: {BadroomTriple_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [],
         roomsLeft: 3
     },
     {
@@ -304,10 +212,7 @@ export const  roomsTypes = [
         cost: 180,
         fotos: {BadroomDD},
         miniFotos: {BadroomDD_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [],
         roomsLeft: 3
     },
     {
@@ -347,10 +252,7 @@ export const  roomsTypes = [
         cost: 130,
         fotos: {BadroomDS},
         miniFotos: {BadroomDS_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [],
         roomsLeft: 3
     },
     {
@@ -390,10 +292,7 @@ export const  roomsTypes = [
         cost: 100,
         fotos: {BadroomFamily2},
         miniFotos: {BadroomFamily2_mini},
-        status: {
-            isFree: true,
-            reserved: {}
-        },
+        roomsList: [],
         roomsLeft: 3
     },
 ]

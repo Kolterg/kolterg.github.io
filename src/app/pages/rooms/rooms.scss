@@ -1,0 +1,49 @@
+#RoomsPage {
+    width: 100%;
+
+    .head {
+        background-image: url("../../../assets/img/rooms/background.png");
+        background-size: 100% 100%;
+        color: #fff;
+        height: 330px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .head p {
+        width: 500px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: 0 80px;
+    }
+
+    .room {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 80px;
+    }
+
+    .room .description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+        width: 670px;
+    }
+
+
+
+    .bookNowBtn {
+        background-color: #DEC328;
+        width: 214px;
+        height: 61px;
+    }
+
+}

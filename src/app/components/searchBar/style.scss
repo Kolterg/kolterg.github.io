@@ -6,17 +6,21 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
 
     Form {
         display: flex;
-        justify-content: space-between;
-        margin: 0 5%;
         width: 100%;
+        justify-content: space-around;
+    }
+
+    h2 {
+        white-space: nowrap;
     }
 
     .inputWrap {
         position: relative;
+        display: flex;
+        flex-direction: column;
     }
 
     .inputWrap .checkIn {
@@ -34,7 +38,7 @@
         height: 50px;
     }
 
-    .inputWrap label {
+    label {
         text-align: start;
     }
 

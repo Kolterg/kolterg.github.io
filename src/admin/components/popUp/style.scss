@@ -1,0 +1,19 @@
+#PopUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    position: absolute;
+    top: 40vh;
+    width: 400px;
+    padding-bottom: 24px;
+    border: solid 1px #000;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+#PopUp.active {
+    opacity: 1;
+    visibility: visible;
+}

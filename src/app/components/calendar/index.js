@@ -1,19 +1,26 @@
 import './style.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import * as calendar from './calendar';
 import classNames from 'classnames';
 
-function Calendar({ monthNames, weekDayNames, onChange, secondOnChange, givenDate,  }) {
+function Calendar({ monthNames, weekDayNames, onChange, secondOnChange, givenDate, selectedDateFromInput, secondSelectedDateFromInput }) {
     const [date, setDate] = useState(givenDate);
-    const [firstSelectedDate, setFirstSelectedDate] = useState(null);
-    const [secondSelectedDate, setSecondSelectedDate] = useState(null);
+    
+    const [firstSelectedDate, setFirstSelectedDate] = useState(selectedDateFromInput);
+    const [secondSelectedDate, setSecondSelectedDate] = useState(secondSelectedDateFromInput);
+
+    const [isFirstSelectedDate, setIsFirstSelectedDate] = useState(true);
 
     const currentDate = new Date();
 
     const monthDate = calendar.getMonthData(date.getFullYear(), date.getMonth());
 
-    const [isFirstSelectedDate, setIsFirstSelectedDate] = useState(true);
+    useEffect(() => {
+        setFirstSelectedDate(selectedDateFromInput);
+        setSecondSelectedDate(secondSelectedDateFromInput)
+    }, [selectedDateFromInput, secondSelectedDateFromInput]);
+
 
     const handlePrevMonthButtonClick = () => {
         const prevMonthDate = new Date(date.getFullYear(), date.getMonth() - 1);
@@ -32,17 +39,15 @@ function Calendar({ monthNames, weekDayNames, onChange, secondOnChange, givenDat
             if (isFirstSelectedDate || (date < firstSelectedDate)) {
                 setFirstSelectedDate(date);
 
-                onChange(date);
+                onChange(calendar.dateToString(date));
 
-                if (date > secondSelectedDate) {
-                    setSecondSelectedDate(null);
-                }
+                if (date > secondSelectedDate) setSecondSelectedDate(null);
 
                 if (isFirstSelectedDate) setIsFirstSelectedDate(!isFirstSelectedDate);
             } else {
                 setSecondSelectedDate(date);
 
-                secondOnChange(date)
+                secondOnChange(calendar.dateToString(date))
 
                 if (date < firstSelectedDate) setFirstSelectedDate(null)
 
@@ -51,9 +56,7 @@ function Calendar({ monthNames, weekDayNames, onChange, secondOnChange, givenDat
         } else {
             setFirstSelectedDate(date);
 
-            const strDate = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
-
-            onChange(strDate);
+            onChange(calendar.dateToString(date));
         }
     };
 
@@ -118,6 +121,9 @@ Calendar.defaultProps = {
     weekDayNames: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
 
     givenDate: new Date(),
+
+    selectedDateFromInput: null,
+    secondSelectedDateFromInput: null,
 
     firstOnChange: Function.prototype,
 

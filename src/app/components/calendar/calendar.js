@@ -11,6 +11,9 @@ const Month = {
     March: 2,
 };
 
+
+export const dateToString = date => date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
+
 export function areDateEqual(a, b) {
     if (!a || !b) return false;
 

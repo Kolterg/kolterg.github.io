@@ -1,11 +1,11 @@
-import './rooms.css';
+import './rooms.scss';
 
-import { getRooms } from '../../../services/api.service';
+import { getRoomsTypes } from '../../../services/api.service';
 import RoomComponent from './components/room.component';
 
 function RoomsPage() {
 
-    let rooms = getRooms();
+    let rooms = getRoomsTypes();
 
     return (
         <div id='RoomsPage'>

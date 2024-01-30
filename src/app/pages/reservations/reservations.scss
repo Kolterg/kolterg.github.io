@@ -16,20 +16,21 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
 
-    .roomsCard .roomFotos {
-        width: 300px;
-        margin-right: 80px;
-    }
+        .roomFotos {
+            width: 300px;
+            margin-right: 80px;
+        }
 
-    .roomsCard .description {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: start;
-        width: 490px;
-        margin-right: 80px;
+        .description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: start;
+            width: 490px;
+            margin-right: 80px;
+        }
+
     }
 
     .icons img {
