@@ -19,7 +19,7 @@ import RoomsListPage, {
   action as roomsListAction,
   loader as roomsListLoader
 } from 'admin/pages/roomsList/roomsList';
-import RoomAdmin, { loader as roomAdminLoader } from 'admin/pages/room-admin/room-admin';
+import RoomAdmin, { action, loader as roomAdminLoader } from 'admin/pages/room-admin/room-admin';
 
 const router = createBrowserRouter([
   {
@@ -85,7 +85,8 @@ const router = createBrowserRouter([
       {
         path: 'room-admin/:roomId',
         element: <RoomAdmin />,
-        loader: roomAdminLoader
+        loader: roomAdminLoader,
+        action: action
       }
     ]
   }

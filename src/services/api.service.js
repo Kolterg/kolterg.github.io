@@ -97,20 +97,32 @@ export async function deleteRoom(id, typeOfRoom) {
 
 export async function addReservation(reservation, typeOfRoom) {
     let rooms = await localforage.getItem(typeOfRoom);
-    console.log(rooms);
-    console.log(reservation);
+    let id = Math.random().toString(36).substring(2, 9);
     const index = rooms.findIndex(room => room.number === reservation.roomNumber);
-    console.log(index);
     delete reservation.roomNumber;
     let room = rooms[index];
-    console.log(room);
-    Object.assign(reservation, {createAt: Date.now(), status: 'unconfirmed'});
+    Object.assign(reservation, {createAt: Date.now(), status: 'unconfirmed', id: id});
     room.reservations.unshift(reservation);
     rooms[index] = room;
     set(rooms, typeOfRoom);
-    return "New reservation added"
+    return "New reservation added";
 }
 
+export async function deleteReservation(reservationId, typeOfRoom) {
+    let rooms = await localforage.getItem(typeOfRoom);
+    for (let i = 0; i < rooms.length; i++) {
+        let room = rooms[i];
+        for (let j = 0; j < room.reservations.length; j++) {
+            let reservation = room.reservations[j];
+            if (reservation.id === reservationId) {
+                room.reservations.splice(j, 1);
+            }
+        }
+        rooms[i] = room;
+    }
+    await set(rooms, typeOfRoom);
+    return "I'm not shure but it must be deleted";
+}
 
 // function onlyUniqueArray(value, index, self) {
 //     return self.indexOf(value) === index;
