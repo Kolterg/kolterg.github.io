@@ -13,13 +13,14 @@ function LandingPage() {
     return (
         <div id='LandingPage'>
             <div className='greatings'>
-                <h2>Welcome to</h2>
-                <h1>H Sol de Canta</h1>
-                <p>We are a family accommodation that seeks to provide good experiences through family treatment and quality service.</p>
+                <h2>1. Welcome to</h2>
+                <h1>1. H Sol de Canta</h1>
+                <p>1. We are a family accommodation that seeks to provide good experiences through family treatment and quality service.</p>
             </div>
             <SearchBar
                 method={{method: 'post'}}
             />
+            <p>2. Lorem Ipsum</p>
         </div>
     )
 }

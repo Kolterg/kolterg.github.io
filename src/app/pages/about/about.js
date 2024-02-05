@@ -10,7 +10,7 @@ function AboutPage() {
                 <div className='text1'>
                     <h1>About us:</h1>
                     <p>
-                        We are a family accommodation that seeks to provide good experiences through family treatment and quality service.
+                        1. We are a family accommodation that seeks to provide good experiences through family treatment and quality service.
                         <br />
                         <br />
                         We have been working for you since 2016 to date with the purpose of delivering wonderful travel experiences to each of our guests.
