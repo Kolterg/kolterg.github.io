@@ -1,4 +1,4 @@
-import './contacts.css';
+import './contacts.scss';
 
 import MapExample from '../../../assets/img/mapExample.png';
 
@@ -7,13 +7,13 @@ function ContactsPage() {
         <div className="Contacts">
             <div className="data">
                 <h2>Address:</h2>
-                <h3>Jr. Tarapacá 700-702 Canta 15360 Perú</h3>
+                <p>Jr. Tarapacá 700-702 Canta 15360 Perú</p>
                 <h2>Phone:</h2>
-                <h3>+51 990 880 019</h3>
+                <p>+51 990 880 019</p>
                 <h2>WhatsApp:</h2>
-                <h3>+51 990 880 019</h3>
+                <p>+51 990 880 019</p>
                 <h2>Email:</h2>
-                <h3>example@gmail.com</h3>
+                <p>example@gmail.com</p>
             </div>
             <img src={MapExample} alt='Map'/>
         </div>

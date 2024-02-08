@@ -8,7 +8,9 @@ function RoomComponent({ room }) {
             <h2>{room.name}</h2>
             <p>{room.description.text}</p>
             <RoomDetails room={room} />
-            <Link to={'../room/' + room.id}><button className='bookNowBtn'>Book now</button></Link>
+            <div className='button-wrap'>
+                <Link to={'../room/' + room.id}><button className='bookNowBtn'>Book now</button></Link>
+            </div>
         </div>
     }
 

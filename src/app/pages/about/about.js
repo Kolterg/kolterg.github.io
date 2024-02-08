@@ -1,4 +1,4 @@
-import './about.css';
+import './about.scss';
 
 import TestFoto1 from '../../../assets/img/about/testFoto1.png';
 import TestFoto2 from '../../../assets/img/about/testFoto2.png';

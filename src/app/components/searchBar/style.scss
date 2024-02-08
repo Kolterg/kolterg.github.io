@@ -1,16 +1,14 @@
 #Search {
-    width: 1200px;
-    height: 130px;
-    background-color: #594731;
     color: #fff;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    width: 100%;
 
-    Form {
+    .search__container {
         display: flex;
-        width: 100%;
+        flex-wrap: wrap;
+        min-height: 130px;
+        background-color: #594731;
         justify-content: space-around;
+        align-items: center;
     }
 
     h2 {
@@ -21,6 +19,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        margin: 0 5px;
     }
 
     .inputWrap .checkIn {
@@ -59,7 +58,7 @@
         opacity: 1;
         visibility: visible;
     }
-    
+
     .checkBtn {
         background-color: #DEC328;
         color: #fff;

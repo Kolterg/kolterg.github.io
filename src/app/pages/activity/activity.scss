@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+.Activity {
+    .head {
+        background-image: url("../../../assets/img/activity/activityBackground.png");
+        background-size: 100% 100%;
+        color: #fff;
+        height: 330px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 24px;
+            width: 500px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
+
+
+    .content {
+        margin: 40px 80px 0;
+        
+        .description {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2 {
+            font-family: Raleway bold;
+        }
+
+        .tour1 {
+            display: flex;
+
+            .description {
+                text-align: start;
+                margin-left: 80px;
+                font-size: 24px;
+
+                h2 {
+                    font-size: 32px;
+                    text-align: start;
+                    margin-bottom: 48px;
+                }
+            }
+        }
+
+        .tour2 {
+            display: flex;
+            margin-top: 80px;
+
+            .description {
+                text-align: start;
+                margin-right: 80px;
+                font-size: 24px;
+
+                h2 {
+                    text-align: end;
+                    font-size: 32px;
+                    margin-bottom: 48px;
+                }
+            }
+
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import './roomDetails.css';
+import './style.scss';
 
 import WiFiIco from '../../../assets/img/rooms/ico/wi-fi.png';
 import TVIco from '../../../assets/img/rooms/ico/tv.png';

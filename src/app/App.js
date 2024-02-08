@@ -6,33 +6,66 @@ import {
 } from "react-router-dom";
 
 import logo from "assets/img/Logo.mini.png";
+import { useState } from 'react';
+import classNames from 'classnames';
 
 function App() {
+
+  const [isMenuIconOpen, setMenuIconOpen] = useState(false);
+
+  function openMenu() {
+    // console.log(isMenuIconOpen);
+    setMenuIconOpen(!isMenuIconOpen)
+    // console.log(isMenuIconOpen);
+    // if (isMenuIconOpen) {
+    //   document.body.classList.toggle('_lock');
+    // }
+  }
+
   return (
-    <div id="App">
+    <div id="App" className={classNames('wrapper', { '_lock': isMenuIconOpen })}>
       <header>
-        <nav>
-          <NavLink to={''} id='logo'><div id='logoWrap'><img src={logo} alt='Link to main page' /></div></NavLink>
-          <NavLink to={'about'} >About</NavLink>
-          <NavLink to={'rooms'} >Rooms</NavLink>
-          <NavLink to={'reservations'} >Reservations</NavLink>
-          <NavLink to={'contacts'} >Contacts</NavLink>
-          <NavLink to={'activity'} >Activity</NavLink>
-        </nav>
-        <div className='barAndBtn'>
-          <Link to={'admin'}>Admin</Link>
-          <select id='lenguageBar' className='lenguageBar'>
-            <option value='value1'>EN</option>
-            <option value='value2'>ES</option>
-            <option value='value3'>UK</option>
-          </select>
-          <button className='bookBtn'><Link to={'reservations'}>Book now</Link></button>
+        <div className='header'>
+          <NavLink to={''} className='header__logo'><div id='logoWrap'><img src={logo} alt='Link to main page' /></div></NavLink>
+          <div className={classNames('menu__icon', { '_active': isMenuIconOpen })} onClick={openMenu}>
+            <span></span>
+          </div>
+          <nav className={classNames('menu__body', { '_active': isMenuIconOpen })}>
+            <ul className='menu__list'>
+              {/* <li className='menu__item'>
+                <NavLink to={''} className={'menu__link'}>Main</NavLink>
+              </li> */}
+              <li className='menu__item'>
+                <NavLink to={'about'} className={'menu__link'}>About</NavLink>
+              </li>
+              <li className='menu__item'>
+                <NavLink to={'rooms'} className={'menu__link'}>Rooms</NavLink>
+              </li>
+              <li className='menu__item'>
+                <NavLink to={'reservations'} className={'menu__link'}>Reservations</NavLink>
+              </li>
+              <li className='menu__item'>
+                <NavLink to={'contacts'} className={'menu__link'}>Contacts</NavLink>
+              </li>
+              <li className='menu__item'>
+                <NavLink to={'activity'} className={'menu__link'}>Activity</NavLink>
+              </li>
+            </ul>
+            <div className='barAndBtn'>
+              <select id='lenguageBar' className='lenguageBar'>
+                <option value='value1'>EN</option>
+                <option value='value2'>ES</option>
+                <option value='value3'>UK</option>
+              </select>
+              <button className='bookBtn'><Link to={'reservations'}>Book now</Link></button>
+            </div>
+          </nav>
         </div>
       </header>
-      
-      <div id="app-content">
+
+      <main id="app-content" className='page'>
         <Outlet />
-      </div>
+      </main>
 
       <footer>
         <div className="overlap-group-2">

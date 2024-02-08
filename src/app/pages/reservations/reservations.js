@@ -25,7 +25,7 @@ function ReservationsPage() {
                 checkOut={checkOut === null ? '' : checkOut}
                 person={person}
             />
-            <div className='roomsList'>
+            <div className='roomsList__container'>
                 {
                     rooms.map(value => <RoomsCard
                         key={value.id}

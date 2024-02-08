@@ -11,6 +11,11 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
     }
 
     .head p {
@@ -28,14 +33,29 @@
         flex-direction: row;
         justify-content: space-between;
         margin-top: 80px;
-    }
 
-    .room .description {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: start;
-        width: 670px;
+        .description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: start;
+            width: 670px;
+
+            h2 {
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+
+            p {
+                margin-bottom: 30px;
+            }
+
+            .button-wrap {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
     }
 
 

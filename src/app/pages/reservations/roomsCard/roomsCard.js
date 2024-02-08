@@ -24,11 +24,13 @@ function RoomsCard({room}) {
             </div>
             <div className='bookingArea'>
                 <h3>
-                    From<br />
-                    S/.{room.cost}
+                    From
+                    <br />
+                    <br />
+                    <p>S/.{room.cost}</p>
                 </h3>
                 <Link to={'../room/' + room.id}><button>Book</button></Link>
-                <p>Rooms left {room.roomsLeft}</p>
+                <p className='roomsLeft'>Rooms left {room.roomsLeft}</p>
             </div>
         </div>
     );

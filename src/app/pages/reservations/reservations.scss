@@ -3,12 +3,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
     #Search {
         border-top: solid #000;
     }
 
-    .roomsList {
+    .roomsList__container {
         margin-top: 40px;
     }
 
@@ -16,6 +17,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-bottom: 40px;
 
         .roomFotos {
             width: 300px;
@@ -29,6 +31,15 @@
             text-align: start;
             width: 490px;
             margin-right: 80px;
+
+            h2 {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
         }
 
     }
@@ -37,6 +48,21 @@
         width: 35px;
         height: 35px;
         margin-right: 10px;
+    }
+
+    .bookingArea {
+        h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+
+            p {
+                font-size: 32px;
+            }
+        }
+
+        .roomsLeft {
+            margin-top: 16px;
+        }
     }
 
     .bookingArea button {

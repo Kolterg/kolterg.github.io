@@ -28,7 +28,7 @@ function SearchBar({ checkIn, checkOut, person, method }) {
 
     return (
         <div id='Search'>
-            <Form id="search-form" role="search" {...method}>
+            <Form id="search-form" className='search__container' role="search" {...method}>
                 <h2>Book now</h2>
                 <div className='inputWrap'>
                     <label htmlFor='checkInField'>Check in</label>

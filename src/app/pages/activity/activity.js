@@ -1,4 +1,4 @@
-import './activity.css';
+import './activity.scss';
 
 import ActivityImg1 from '../../../assets/img/activity/activity1.png';
 import ActivityImg2 from '../../../assets/img/activity/activity2.png';
